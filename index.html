@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MahedaLabs - Hukum Mendel</title>
+    <link rel="icon" href="images/icon.png" type="image/x-icon" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+    }
+
+    body {
+      font-family: "Fredoka", sans-serif;
+      background-color: whitesmoke;
+      /* #212a3e; */
+      color: black;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+    }
+    button {
+      border: none;
+      cursor: pointer;
+      appearance: none;
+      background-color: inherit;
+      transition: transform 0.7s ease-in-out;
+    }
+
+    .Title {
+      background-color: whitesmoke;
+      position: fixed;
+      top: 5%;
+      left: 50%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #sifat1 {
+      max-width: 20%;
+      position: fixed;
+      top: 40%;
+      left: 25%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+    }
+    #sifat2 {
+      max-width: 20%;
+      position: fixed;
+      top: 40%;
+      left: 75%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+    }
+
+    .next1 {
+      position: fixed;
+      top: 40%;
+      left: 38%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+    }
+    .back1 {
+      position: fixed;
+      top: 40%;
+      left: 12%;
+      z-index: -2;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+    .next2 {
+      position: fixed;
+      top: 40%;
+      left: 88%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+    }
+    .back2 {
+      position: fixed;
+      top: 40%;
+      left: 62%;
+      z-index: -2;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+    .start {
+      position: fixed;
+      max-width: 20%;
+      top: 80%;
+      left: 50%;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+    }
+
+    /* popup */
+    .container {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 3%;
+      margin-bottom: 3%;
+      border: 5px solid white;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background-color: whitesmoke;
+    }
+
+    /* Container for columns and the top "toolbar" */
+    .row {
+      padding: 10px;
+      background: white;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    /* Create three unequal columns that floats next to each other */
+    .column {
+      float: left;
+    }
+
+    .left {
+      width: 15%;
+    }
+
+    .right {
+      width: 10%;
+    }
+
+    .middle {
+      width: 75%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Three dots */
+    .dot {
+      margin-top: 4px;
+      height: 20px;
+      width: 20px;
+      background-color: white;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .close {
+      margin-right: 20px;
+      max-width: 30px;
+      display: inline-block;
+    }
+
+    /* Style the input field */
+    .judul {
+      width: 100%;
+      border-radius: 3px;
+      border: none;
+      background-color: #666;
+      margin-top: 0px;
+      height: 30px;
+      color: white;
+      padding: 5px;
+      text-align: center;
+    }
+
+    /* Page content */
+    .content {
+      padding: 10px;
+    }
+  </style>
+  <body style="background-image: url('images/bsquare.png')" ;>
+    <div class="Title" style="font-size: xx-large; font-weight: bold">
+      <p>Simulasi Pewarisan Sifat</p>
+    </div>
+    <img id="sifat1" src="images/_start.png" />
+    <button>
+      <img class="back1" id="idBack1" src="images/right.png" />
+    </button>
+    <button>
+      <img class="next1" id="idNext1" src="images/right.png" />
+    </button>
+    <img id="sifat2" src="images/_start.png" />
+    <button>
+      <img class="back2" id="idBack2" src="images/right.png" />
+    </button>
+    <button>
+      <img class="next2" id="idNext2" src="images/right.png" />
+    </button>
+    <button>
+      <img class="start" id="idstart" src="images/btStart.png" />
+    </button>
+
+    <!-- popup -->
+
+    <div class="container">
+      <div class="row">
+        <div class="column left">
+          <span class="dot" style="background: #ed594a"></span>
+          <span class="dot" style="background: #fdd800"></span>
+          <span class="dot" style="background: #5ac05a"></span>
+        </div>
+        <div class="column middle">
+          <p class="judul" style="font-size: large">Hasil Persilangan</p>
+        </div>
+        <div class="column right">
+          <div style="float: right">
+            <button>
+              <img class="close" id="idclose" src="images/btClose.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="height: 75vh">
+        <div class="row">
+          <div style="display: flex">
+            <div style="flex: 25%; padding: 10px; text-align: right">
+              <br />
+              <br />
+              <p style="font-size: large; font-weight: bolder">Parental :</p>
+              <p></p>
+              <p></p>
+              <p style="font-size: large; font-weight: bold">Gamet :</p>
+            </div>
+
+            <div style="flex: 35%; padding: 10px; text-align: right">
+              <br />
+              <br />
+              <p id="infoP1" style="font-size: large"></p>
+              <p id="infoKrom1" style="font-weight: bolder"></p>
+              <p id="infoGam1a" style="font-size: large; font-weight: bold"></p>
+              <p id="infoGam1b" style="font-size: large; font-weight: bold"></p>
+            </div>
+            <div style="flex: 5%; padding: 10px; text-align: center">
+              <br />
+              <br />
+              <p style="font-size: large">&gt;&lt;</p>
+              <p style="font-weight: bolder">&gt;&lt;</p>
+            </div>
+            <div style="flex: 35%; padding: 10px; text-align: left">
+              <br />
+              <br />
+              <p id="infoP2" style="font-size: large"></p>
+              <p id="infoKrom2" style="font-weight: bolder"></p>
+              <p id="infoGam2a" style="font-size: large; font-weight: bold"></p>
+              <p id="infoGam2b" style="font-size: large; font-weight: bold"></p>
+            </div>
+          </div>
+
+          <div style="display: flex">
+            <div style="flex: 25%; padding: 10px; text-align: right">
+              <p style="font-size: large; font-weight: bolder">Genotipe :</p>
+              <p style="font-size: large; font-weight: bolder">Fenotipe :</p>
+              <p></p>
+              <br />
+              <br />
+            </div>
+            <div style="flex: 75%; padding: 10px; text-align: center">
+              <p id="infoGen" style="font-size: large"></p>
+              <p id="infoFen" style="font-weight: bolder"></p>
+              <p></p>
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const btB1 = document.querySelector(".back1");
+      const btN1 = document.querySelector(".next1");
+      const btB2 = document.querySelector(".back2");
+      const btN2 = document.querySelector(".next2");
+
+      const btSilang = document.querySelector(".start");
+      const btClose = document.querySelector(".close");
+
+      const popuphasil = document.querySelector(".container");
+      popuphasil.hidden = true;
+
+      // text info
+      var P1 = document.getElementById("infoP1");
+      var P2 = document.getElementById("infoP2");
+      var krom1 = document.getElementById("infoKrom1");
+      var krom2 = document.getElementById("infoKrom2");
+      var gmt1a = document.getElementById("infoGam1a");
+      var gmt2a = document.getElementById("infoGam2a");
+      var gmt1b = document.getElementById("infoGam1b");
+      var gmt2b = document.getElementById("infoGam2b");
+      var Gntp = document.getElementById("infoGen");
+      var Fntp = document.getElementById("infoFen");
+
+      var iS1 = document.getElementById("sifat1");
+      var iS2 = document.getElementById("sifat2");
+      var sampel1 = 0;
+      var sampel2 = 0;
+      var ba = 7;
+      var bb = 0;
+      const iSampel = [
+        "images/1_Semangka_B.png",
+        "images/1_Semangka_Bb.png",
+        "images/1_Semangka_b_.png",
+        "images/1_Semangka_S.png",
+        "images/1_Semangka_Ss.png",
+        "images/1_Semangka_s_.png",
+        "images/2_Semangka_BM.png",
+        "images/2_Semangka_BMm.png",
+      ];
+
+      const tSampel = [
+        "Semangka Berbuah Bulat",
+        "Semangka Berbuah Bulat",
+        "Semangka Berbuah Lonjong",
+        "Semangka Berbiji Sedikit",
+        "Semangka Berbiji Sedikit",
+        "Semangka Berbiji Banyak",
+        "Semangka Manis Berbuah Bulat",
+        "Semangka Manis Berbuah Bulat",
+      ];
+
+      const Krom = ["BB", "Bb", "bb", "SS", "Ss", "ss", "BBMN", "BMBm"];
+      const Gamet = ["B", "Bb", "b", "S", "Ss", "s", "BM", "BMBm"];
+      const hasil = [];
+      const hasilftp = [];
+      var hasil1 = "kosong";
+      var hasil2 = 0;
+
+      function fChoose(b, s) {
+        if (s == 1) {
+          if (b == 1) {
+            sampel1 = sampel1 + 1;
+            if (sampel1 >= ba) {
+              sampel1 = bb + 1;
+            }
+          }
+          if (b == 0) {
+            sampel1 = sampel1 - 1;
+            if (sampel1 <= bb) {
+              sampel1 = ba - 1;
+            }
+          }
+          iS1.src = iSampel[sampel1 - 1];
+        }
+
+        if (s == 2) {
+          if (b == 1) {
+            sampel2 = sampel2 + 1;
+            if (sampel2 >= ba) {
+              sampel2 = bb + 1;
+            }
+          }
+          if (b == 0) {
+            sampel2 = sampel2 - 1;
+            if (sampel2 <= bb) {
+              sampel2 = ba - 1;
+            }
+          }
+          iS2.src = iSampel[sampel2 - 1];
+        }
+      }
+
+      function silang(a, b) {
+        gamet1 = Array.from(a);
+        gamet2 = Array.from(b);
+
+        hasil.length = 0;
+        hasilftp.length = 0;
+        var n = gamet1.length;
+        var m = gamet2.length;
+        for (let i = 0; i < n; i++) {
+          for (let j = 0; j < m; j++) {
+            if (gamet1[i] <= gamet2[j]) {
+              hasil1 = gamet1[i] + gamet2[j];
+            } else {
+              hasil1 = gamet2[j] + gamet1[i];
+            }
+            // if (hasil1 == hasil[hasil.length - 1]) {
+            // } else {
+            hasil.push(hasil1);
+            hasil2 = Krom.findIndex((x) => x == hasil1);
+            hasilftp.push(tSampel[hasil2]);
+            // }
+          }
+        }
+
+        P1.textContent = tSampel[sampel1 - 1];
+        P2.textContent = tSampel[sampel2 - 1];
+        krom1.textContent = Gamet[sampel1 - 1];
+        krom2.textContent = Gamet[sampel2 - 1];
+        gmt1a.textContent = gamet1[0];
+        gmt1b.textContent = gamet1[1];
+        gmt2a.textContent = gamet2[0];
+        gmt2b.textContent = gamet2[1];
+        Gntp.textContent = Array.from(hasil);
+        Fntp.textContent = Array.from(hasilftp);
+      }
+
+      btN1.addEventListener("click", function () {
+        fChoose(1, 1);
+      });
+      btB1.addEventListener("click", function () {
+        fChoose(0, 1);
+      });
+      btN2.addEventListener("click", function () {
+        fChoose(1, 2);
+      });
+      btB2.addEventListener("click", function () {
+        fChoose(0, 2);
+      });
+
+      btSilang.addEventListener("click", function () {
+        if (Math.abs(sampel1 - sampel2) >= 3) {
+          alert("Proses Persilangan Gagal, Sampel Sifat Tidak Berhubungan.");
+          sampel1 = 0;
+          sampel2 = 0;
+          iS1.src = "images/_start.png";
+          iS2.src = "images/_start.png";
+        } else {
+          silang(Gamet[sampel1 - 1], Gamet[sampel2 - 1]);
+          popuphasil.hidden = false;
+        }
+      });
+
+      btClose.addEventListener("click", function () {
+        popuphasil.hidden = true;
+        sampel1 = 0;
+        sampel2 = 0;
+        iS1.src = "images/_start.png";
+        iS2.src = "images/_start.png";
+      });
+    </script>
+  </body>
+</html>
