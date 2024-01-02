@@ -68,6 +68,10 @@
       transform: translate(-50%, -50%);
     }
 
+    .sifat {
+      max-width: 25%;
+    }
+
     .next1 {
       position: fixed;
       top: 40%;
@@ -109,12 +113,13 @@
     .container {
       margin-left: 5%;
       margin-right: 5%;
-      margin-top: 3%;
+      margin-top: 0%;
       margin-bottom: 3%;
       border: 5px solid white;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
       background-color: whitesmoke;
+      z-index: 10;
     }
 
     /* Container for columns and the top "toolbar" */
@@ -160,7 +165,7 @@
     }
 
     .close {
-      margin-right: 20px;
+      margin-right: 0px;
       max-width: 30px;
       display: inline-block;
     }
@@ -208,6 +213,7 @@
     <!-- popup -->
 
     <div class="container">
+      <!-- window popup title -->
       <div class="row">
         <div class="column left">
           <span class="dot" style="background: #ed594a"></span>
@@ -220,14 +226,18 @@
         <div class="column right">
           <div style="float: right">
             <button>
+              <img class="close" id="idinfo" src="images/btDetail.png" />
+            </button>
+            <button>
               <img class="close" id="idclose" src="images/btClose.png" />
             </button>
           </div>
         </div>
       </div>
 
-      <div class="content" style="height: 75vh">
-        <div class="row">
+      <!-- detail info  -->
+      <div class="content" style="height: 82vh">
+        <div id="detail-info" class="row">
           <div style="display: flex">
             <div style="flex: 25%; padding: 10px; text-align: right">
               <br />
@@ -279,171 +289,266 @@
             </div>
           </div>
         </div>
+
+        <div id="image-info" class="row">
+          <div style="display: flex">
+            <div style="flex: 40%; padding: 10px; text-align: right">
+              <img id="sifatP1" class="sifat" src="images/iStart.png" />
+            </div>
+            <div style="flex: 20%; padding: 10px; text-align: center">
+              <!-- <p style="font-size: larger; font-weight: bolder">Induk</p> -->
+              <br />
+              <br />
+              <img style="max-width: 50%" src="images/iSilang.png" />
+            </div>
+            <div style="flex: 40%; padding: 10px; text-align: left">
+              <img id="sifatP2" class="sifat" src="images/iStart.png" />
+            </div>
+          </div>
+          <div style="flex: 100%; text-align: center">
+            <br />
+            <p
+              style="
+                font-size: medium;
+                font-weight: bold;
+                font-style: italic;
+                color: #ed594a;
+              "
+            >
+              Kemungkinan Variasi Keturunan
+            </p>
+          </div>
+
+          <div style="display: flex; justify-content: space-between">
+            <div style="padding: 5%"></div>
+            <div id="canvasF"></div>
+            <!-- <img id="sifatF1" style="max-height: 250px" src="" />
+            <img id="sifatF2" style="max-height: 250px" src="" />
+            <img id="sifatF3" style="max-height: 250px" src="" />
+            <img id="sifatF4" style="max-height: 250px" src="" /> -->
+            <div style="padding: 5%"></div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script>
       const btB1 = document.querySelector(".back1");
-      const btN1 = document.querySelector(".next1");
-      const btB2 = document.querySelector(".back2");
-      const btN2 = document.querySelector(".next2");
+const btN1 = document.querySelector(".next1");
+const btB2 = document.querySelector(".back2");
+const btN2 = document.querySelector(".next2");
 
-      const btSilang = document.querySelector(".start");
-      const btClose = document.querySelector(".close");
+const btSilang = document.querySelector(".start");
+const btClose = document.getElementById("idclose");
+const btInfo = document.getElementById("idinfo");
 
-      const popuphasil = document.querySelector(".container");
-      popuphasil.hidden = true;
+const popuphasil = document.querySelector(".container");
+const detailhasil = document.getElementById("detail-info");
+const imghasil = document.getElementById("image-info");
+popuphasil.hidden = true;
+detailhasil.hidden = true;
+//imghasil.hidden = true;
+var infoFlag = 0;
 
-      // text info
-      var P1 = document.getElementById("infoP1");
-      var P2 = document.getElementById("infoP2");
-      var krom1 = document.getElementById("infoKrom1");
-      var krom2 = document.getElementById("infoKrom2");
-      var gmt1a = document.getElementById("infoGam1a");
-      var gmt2a = document.getElementById("infoGam2a");
-      var gmt1b = document.getElementById("infoGam1b");
-      var gmt2b = document.getElementById("infoGam2b");
-      var Gntp = document.getElementById("infoGen");
-      var Fntp = document.getElementById("infoFen");
+// text info
+var P1 = document.getElementById("infoP1");
+var P2 = document.getElementById("infoP2");
+var krom1 = document.getElementById("infoKrom1");
+var krom2 = document.getElementById("infoKrom2");
+var gmt1a = document.getElementById("infoGam1a");
+var gmt2a = document.getElementById("infoGam2a");
+var gmt1b = document.getElementById("infoGam1b");
+var gmt2b = document.getElementById("infoGam2b");
+var Gntp = document.getElementById("infoGen");
+var Fntp = document.getElementById("infoFen");
 
-      var iS1 = document.getElementById("sifat1");
-      var iS2 = document.getElementById("sifat2");
-      var sampel1 = 0;
-      var sampel2 = 0;
-      var ba = 7;
-      var bb = 0;
-      const iSampel = [
-        "images/1_Semangka_B.png",
-        "images/1_Semangka_Bb.png",
-        "images/1_Semangka_b_.png",
-        "images/1_Semangka_S.png",
-        "images/1_Semangka_Ss.png",
-        "images/1_Semangka_s_.png",
-        "images/2_Semangka_BM.png",
-        "images/2_Semangka_BMm.png",
-      ];
+var iS1 = document.getElementById("sifat1");
+var iS2 = document.getElementById("sifat2");
+var sampel1 = 0;
+var sampel2 = 0;
+var ba = 10;
+var bb = 0;
+const iSampel = [
+  "images/1_Semangka_B.png",
+  "images/1_Semangka_Bb.png",
+  "images/1_Semangka_b_.png",
+  "images/1_Semangka_S.png",
+  "images/1_Semangka_Ss.png",
+  "images/1_Semangka_s_.png",
+  "images/1_Antirrhinum_M.png",
+  "images/1_Antirrhinum_Mm.png",
+  "images/1_Antirrhinum_m_.png",
+];
 
-      const tSampel = [
-        "Semangka Berbuah Bulat",
-        "Semangka Berbuah Bulat",
-        "Semangka Berbuah Lonjong",
-        "Semangka Berbiji Sedikit",
-        "Semangka Berbiji Sedikit",
-        "Semangka Berbiji Banyak",
-        "Semangka Manis Berbuah Bulat",
-        "Semangka Manis Berbuah Bulat",
-      ];
+const tSampel = [
+  "Semangka Berbuah Bulat",
+  "Semangka Berbuah Bulat",
+  "Semangka Berbuah Lonjong",
+  "Semangka Berbiji Sedikit",
+  "Semangka Berbiji Sedikit",
+  "Semangka Berbiji Banyak",
+  "Antirrhinum Berbunga Merah",
+  "Antirrhinum Berbunga Pink",
+  "Antirrhinum Berbunga Putih",
+];
 
-      const Krom = ["BB", "Bb", "bb", "SS", "Ss", "ss", "BBMN", "BMBm"];
-      const Gamet = ["B", "Bb", "b", "S", "Ss", "s", "BM", "BMBm"];
-      const hasil = [];
-      const hasilftp = [];
-      var hasil1 = "kosong";
-      var hasil2 = 0;
+const Krom = ["BB", "Bb", "bb", "SS", "Ss", "ss", "MM", "Mm", "mm"];
+const Gamet = ["B", "Bb", "b", "S", "Ss", "s", "M", "Mm", "m"];
+const hasil = [];
+const hasilftp = [];
+var hasil1 = "kosong";
+var hasil2 = 0;
 
-      function fChoose(b, s) {
-        if (s == 1) {
-          if (b == 1) {
-            sampel1 = sampel1 + 1;
-            if (sampel1 >= ba) {
-              sampel1 = bb + 1;
-            }
-          }
-          if (b == 0) {
-            sampel1 = sampel1 - 1;
-            if (sampel1 <= bb) {
-              sampel1 = ba - 1;
-            }
-          }
-          iS1.src = iSampel[sampel1 - 1];
-        }
+// image-hasil
+var iP1 = document.getElementById("sifatP1");
+var iP2 = document.getElementById("sifatP2");
 
-        if (s == 2) {
-          if (b == 1) {
-            sampel2 = sampel2 + 1;
-            if (sampel2 >= ba) {
-              sampel2 = bb + 1;
-            }
-          }
-          if (b == 0) {
-            sampel2 = sampel2 - 1;
-            if (sampel2 <= bb) {
-              sampel2 = ba - 1;
-            }
-          }
-          iS2.src = iSampel[sampel2 - 1];
-        }
+// var iF1 = document.getElementById("sifatF1");
+// var iF2 = document.getElementById("sifatF2");
+// var iF3 = document.getElementById("sifatF3");
+// var iF4 = document.getElementById("sifatF4");
+const nF = [];
+
+var cFntp = document.getElementById("canvasF");
+
+function fChoose(b, s) {
+  if (s == 1) {
+    if (b == 1) {
+      sampel1 = sampel1 + 1;
+      if (sampel1 >= ba) {
+        sampel1 = bb + 1;
       }
-
-      function silang(a, b) {
-        gamet1 = Array.from(a);
-        gamet2 = Array.from(b);
-
-        hasil.length = 0;
-        hasilftp.length = 0;
-        var n = gamet1.length;
-        var m = gamet2.length;
-        for (let i = 0; i < n; i++) {
-          for (let j = 0; j < m; j++) {
-            if (gamet1[i] <= gamet2[j]) {
-              hasil1 = gamet1[i] + gamet2[j];
-            } else {
-              hasil1 = gamet2[j] + gamet1[i];
-            }
-            // if (hasil1 == hasil[hasil.length - 1]) {
-            // } else {
-            hasil.push(hasil1);
-            hasil2 = Krom.findIndex((x) => x == hasil1);
-            hasilftp.push(tSampel[hasil2]);
-            // }
-          }
-        }
-
-        P1.textContent = tSampel[sampel1 - 1];
-        P2.textContent = tSampel[sampel2 - 1];
-        krom1.textContent = Gamet[sampel1 - 1];
-        krom2.textContent = Gamet[sampel2 - 1];
-        gmt1a.textContent = gamet1[0];
-        gmt1b.textContent = gamet1[1];
-        gmt2a.textContent = gamet2[0];
-        gmt2b.textContent = gamet2[1];
-        Gntp.textContent = Array.from(hasil);
-        Fntp.textContent = Array.from(hasilftp);
+    }
+    if (b == 0) {
+      sampel1 = sampel1 - 1;
+      if (sampel1 <= bb) {
+        sampel1 = ba - 1;
       }
+    }
+    iS1.src = iSampel[sampel1 - 1];
+  }
 
-      btN1.addEventListener("click", function () {
-        fChoose(1, 1);
-      });
-      btB1.addEventListener("click", function () {
-        fChoose(0, 1);
-      });
-      btN2.addEventListener("click", function () {
-        fChoose(1, 2);
-      });
-      btB2.addEventListener("click", function () {
-        fChoose(0, 2);
-      });
+  if (s == 2) {
+    if (b == 1) {
+      sampel2 = sampel2 + 1;
+      if (sampel2 >= ba) {
+        sampel2 = bb + 1;
+      }
+    }
+    if (b == 0) {
+      sampel2 = sampel2 - 1;
+      if (sampel2 <= bb) {
+        sampel2 = ba - 1;
+      }
+    }
+    iS2.src = iSampel[sampel2 - 1];
+  }
+}
 
-      btSilang.addEventListener("click", function () {
-        if (Math.abs(sampel1 - sampel2) >= 3) {
-          alert("Proses Persilangan Gagal, Sampel Sifat Tidak Berhubungan.");
-          sampel1 = 0;
-          sampel2 = 0;
-          iS1.src = "images/iStart.png";
-          iS2.src = "images/iStart.png";
-        } else {
-          silang(Gamet[sampel1 - 1], Gamet[sampel2 - 1]);
-          popuphasil.hidden = false;
-        }
-      });
+function silang(a, b) {
+  gamet1 = Array.from(a);
+  gamet2 = Array.from(b);
 
-      btClose.addEventListener("click", function () {
-        popuphasil.hidden = true;
-        sampel1 = 0;
-        sampel2 = 0;
-        iS1.src = "images/iStart.png";
-        iS2.src = "images/iStart.png";
-      });
+  hasil.length = 0;
+  hasilftp.length = 0;
+  var n = gamet1.length;
+  var m = gamet2.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < m; j++) {
+      if (gamet1[i] <= gamet2[j]) {
+        hasil1 = gamet1[i] + gamet2[j];
+      } else {
+        hasil1 = gamet2[j] + gamet1[i];
+      }
+      // if (hasil1 == hasil[hasil.length - 1]) {
+      // } else {
+      hasil.push(hasil1);
+      hasil2 = Krom.findIndex((x) => x == hasil1);
+      hasilftp.push(tSampel[hasil2]);
+      nF.push(hasil2);
+
+      var x = document.createElement("img");
+      x.style.maxHeight = "250px";
+      x.style.padding = "10px";
+      x.id = "fenotip" + hasil2;
+      x.src = iSampel[hasil2];
+      cFntp.appendChild(x);
+      // }
+    }
+  }
+
+  iP1.src = iSampel[sampel1 - 1];
+  iP2.src = iSampel[sampel2 - 1];
+
+  P1.textContent = tSampel[sampel1 - 1];
+  P2.textContent = tSampel[sampel2 - 1];
+  krom1.textContent = Gamet[sampel1 - 1];
+  krom2.textContent = Gamet[sampel2 - 1];
+  gmt1a.textContent = gamet1[0];
+  gmt1b.textContent = gamet1[1];
+  gmt2a.textContent = gamet2[0];
+  gmt2b.textContent = gamet2[1];
+  Gntp.textContent = Array.from(hasil);
+  Fntp.textContent = Array.from(hasilftp);
+}
+
+btN1.addEventListener("click", function () {
+  fChoose(1, 1);
+});
+btB1.addEventListener("click", function () {
+  fChoose(0, 1);
+});
+btN2.addEventListener("click", function () {
+  fChoose(1, 2);
+});
+btB2.addEventListener("click", function () {
+  fChoose(0, 2);
+});
+
+btSilang.addEventListener("click", function () {
+  if (sampel1 == 0 || sampel2 == 0) {
+    alert(
+      "Proses Persilangan Gagal, Silahkan Memasukkan Data Sampel Terlebih Dahulu."
+    );
+  }
+  if (Math.abs(sampel1 - sampel2) >= 3) {
+    alert("Proses Persilangan Gagal, Sampel Sifat Tidak Berhubungan.");
+    sampel1 = 0;
+    sampel2 = 0;
+    iS1.src = "images/iStart.png";
+    iS2.src = "images/iStart.png";
+  } else {
+    silang(Gamet[sampel1 - 1], Gamet[sampel2 - 1]);
+    popuphasil.hidden = false;
+  }
+});
+
+btClose.addEventListener("click", function () {
+  popuphasil.hidden = true;
+  sampel1 = 0;
+  sampel2 = 0;
+  iS1.src = "images/iStart.png";
+  iS2.src = "images/iStart.png";
+
+  while (cFntp.firstChild) {
+    cFntp.removeChild(cFntp.firstChild);
+  }
+});
+
+btInfo.addEventListener("click", function () {
+  if (infoFlag == 0) {
+    detailhasil.hidden = false;
+    imghasil.hidden = true;
+    btInfo.src = "images/btImage.png";
+    infoFlag = 1;
+  } else {
+    detailhasil.hidden = true;
+    imghasil.hidden = false;
+    btInfo.src = "images/btDetail.png";
+    infoFlag = 0;
+  }
+});
+
     </script>
   </body>
 </html>
