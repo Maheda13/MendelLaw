@@ -333,7 +333,7 @@
     </div>
 
     <script>
-      const btB1 = document.querySelector(".back1");
+const btB1 = document.querySelector(".back1");
 const btN1 = document.querySelector(".next1");
 const btB2 = document.querySelector(".back2");
 const btN2 = document.querySelector(".next2");
@@ -549,6 +549,11 @@ btInfo.addEventListener("click", function () {
   }
 });
 
-    </script>
+window.onload = function(){
+var x = iSampel.length;
+for (let i = 0; i < x; i++) {
+  iP1.src = iSampel[x];
+}
+};    </script>
   </body>
 </html>
