@@ -74,203 +74,117 @@ const state = {
 // 3. SVG GENERATORS
 // ============================================
 
-const SVG = {
-  /* ---- Watermelon: Round (Bulat) ---- */
+/* ========================================
+ * SEMANGKA — Berbasis ikon Twemoji (Twitter)
+ * Sumber: github.com/jdecked/twemoji
+ * Lisensi: CC-BY 4.0
+ * ======================================== */
+
+  /* ---- Semangka Bulat (dilihat dari luar) ---- */
   watermelonRound() {
     return `
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <!-- Shadow -->
-        <ellipse cx="60" cy="112" rx="32" ry="5" fill="rgba(0,0,0,0.08)"/>
-        <!-- Body base (dark outline) -->
-        <circle cx="60" cy="58" r="46" fill="#15803d"/>
-        <!-- Body main -->
-        <circle cx="60" cy="58" r="44" fill="#22c55e"/>
-        <!-- Body highlight zone -->
-        <ellipse cx="46" cy="42" rx="28" ry="22" fill="#4ade80" opacity="0.5"/>
-        <!-- Stripes — organic curves -->
-        <path d="M 20,28 C 28,42 36,54 22,78" stroke="#15803d" stroke-width="5" fill="none" opacity="0.35" stroke-linecap="round"/>
-        <path d="M 34,14 C 40,34 46,54 36,92" stroke="#15803d" stroke-width="4.5" fill="none" opacity="0.30" stroke-linecap="round"/>
-        <path d="M 60,12 C 60,34 60,56 60,104" stroke="#15803d" stroke-width="4" fill="none" opacity="0.25" stroke-linecap="round"/>
-        <path d="M 86,14 C 80,34 74,54 84,92" stroke="#15803d" stroke-width="4.5" fill="none" opacity="0.30" stroke-linecap="round"/>
-        <path d="M 100,28 C 92,42 84,54 98,78" stroke="#15803d" stroke-width="5" fill="none" opacity="0.35" stroke-linecap="round"/>
-        <!-- Shine -->
-        <ellipse cx="40" cy="34" rx="12" ry="8" fill="white" opacity="0.18" transform="rotate(-22,40,34)"/>
-        <!-- Stem -->
-        <path d="M 58,14 C 56,9 53,5 48,3" stroke="#78350f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-        <!-- Tendril -->
-        <path d="M 62,14 C 66,9 70,7 72,10 C 74,14 70,16 67,13" stroke="#22c55e" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-        <!-- Leaf hint -->
-        <path d="M 48,3 C 44,5 42,3 40,5" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="18" cy="33" rx="14" ry="1.5" fill="rgba(0,0,0,0.06)"/>
+        <circle cx="18" cy="19" r="16" fill="#3D6B1E"/>
+        <circle cx="18" cy="19" r="15" fill="#5C913B"/>
+        <ellipse cx="14" cy="14" rx="9" ry="7" fill="#7AB648" opacity="0.35"/>
+        <path d="M5,8 C8,14 10,19 6,27" stroke="#3D6B1E" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+        <path d="M10,3 C12,10 14,18 11,31" stroke="#3D6B1E" stroke-width="1.8" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M18,2 L18,34" stroke="#3D6B1E" stroke-width="1.5" fill="none" opacity="0.2"/>
+        <path d="M26,3 C24,10 22,18 25,31" stroke="#3D6B1E" stroke-width="1.8" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M31,8 C28,14 26,19 30,27" stroke="#3D6B1E" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+        <ellipse cx="12" cy="10" rx="4" ry="2.5" fill="white" opacity="0.15" transform="rotate(-20,12,10)"/>
+        <path d="M17,4 C16,2 14,1 12,1" stroke="#8B6914" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M19,4 C21,2 23,1 24,2" stroke="#5C913B" stroke-width="1" fill="none" stroke-linecap="round"/>
       </svg>`;
   },
 
-  /* ---- Watermelon: Oval (Lonjong) ---- */
+  /* ---- Semangka Lonjong (dilihat dari luar) ---- */
   watermelonOval() {
     return `
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="110" rx="22" ry="4" fill="rgba(0,0,0,0.07)"/>
-        <ellipse cx="60" cy="58" rx="28" ry="46" fill="#15803d"/>
-        <ellipse cx="60" cy="58" rx="26" ry="44" fill="#22c55e"/>
-        <ellipse cx="50" cy="40" rx="18" ry="26" fill="#4ade80" opacity="0.45"/>
-        <path d="M 38,18 C 44,36 46,56 40,90" stroke="#15803d" stroke-width="4" fill="none" opacity="0.30" stroke-linecap="round"/>
-        <path d="M 50,8  C 54,28 56,54 52,100" stroke="#15803d" stroke-width="3.5" fill="none" opacity="0.25" stroke-linecap="round"/>
-        <path d="M 60,6  C 60,28 60,54 60,102" stroke="#15803d" stroke-width="3" fill="none" opacity="0.22" stroke-linecap="round"/>
-        <path d="M 70,8  C 66,28 64,54 68,100" stroke="#15803d" stroke-width="3.5" fill="none" opacity="0.25" stroke-linecap="round"/>
-        <path d="M 82,18 C 76,36 74,56 80,90" stroke="#15803d" stroke-width="4" fill="none" opacity="0.30" stroke-linecap="round"/>
-        <ellipse cx="46" cy="30" rx="6" ry="10" fill="white" opacity="0.16" transform="rotate(-8,46,30)"/>
-        <path d="M 58,14 C 56,8 53,4 48,2" stroke="#78350f" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M 62,14 C 66,9 69,7 71,10" stroke="#22c55e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="18" cy="33" rx="10" ry="1.5" fill="rgba(0,0,0,0.06)"/>
+        <ellipse cx="18" cy="19" rx="10" ry="16" fill="#3D6B1E"/>
+        <ellipse cx="18" cy="19" rx="9" ry="15" fill="#5C913B"/>
+        <ellipse cx="15" cy="13" rx="6" ry="9" fill="#7AB648" opacity="0.3"/>
+        <path d="M10,5 C12,12 13,19 11,30" stroke="#3D6B1E" stroke-width="1.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M14,2 L14,34" stroke="#3D6B1E" stroke-width="1.2" fill="none" opacity="0.2"/>
+        <path d="M18,1 L18,35" stroke="#3D6B1E" stroke-width="1" fill="none" opacity="0.15"/>
+        <path d="M22,2 L22,34" stroke="#3D6B1E" stroke-width="1.2" fill="none" opacity="0.2"/>
+        <path d="M26,5 C24,12 23,19 25,30" stroke="#3D6B1E" stroke-width="1.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <ellipse cx="13" cy="10" rx="2" ry="3.5" fill="white" opacity="0.12" transform="rotate(-5,13,10)"/>
+        <path d="M17,4 C16,2 14,1 12,1" stroke="#8B6914" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       </svg>`;
   },
 
-  /* ---- Watermelon: Cross-section, Few Seeds ---- */
+  /* ---- Semangka Irisan: Sedikit Biji (3 biji) ---- */
   watermelonFewSeeds() {
     return `
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="114" rx="40" ry="4" fill="rgba(0,0,0,0.06)"/>
-        <!-- Outer rind -->
-        <circle cx="60" cy="58" r="48" fill="#16a34a"/>
-        <!-- Inner rind (white-green) -->
-        <circle cx="60" cy="58" r="44" fill="#bbf7d0"/>
-        <!-- Flesh -->
-        <circle cx="60" cy="58" r="38" fill="#ef4444"/>
-        <!-- Flesh highlight -->
-        <ellipse cx="48" cy="44" rx="22" ry="16" fill="#f87171" opacity="0.4"/>
-        <!-- Center -->
-        <circle cx="60" cy="58" r="10" fill="#fca5a5" opacity="0.45"/>
-        <!-- Flesh texture lines -->
-        <line x1="60" y1="22" x2="60" y2="94" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
-        <line x1="24" y1="58" x2="96" y2="58" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
-        <!-- Seeds — teardrop shapes -->
-        <path d="M 42,42 Q 39,37 42,33 Q 45,37 42,42 Z" fill="#1e293b"/>
-        <path d="M 70,38 Q 67,33 70,29 Q 73,33 70,38 Z" fill="#1e293b"/>
-        <path d="M 52,70 Q 49,65 52,61 Q 55,65 52,70 Z" fill="#1e293b" transform="rotate(12,52,70)"/>
-        <!-- Seed highlights -->
-        <ellipse cx="41.5" cy="36" rx="1" ry="1.5" fill="white" opacity="0.25"/>
-        <ellipse cx="69.5" cy="32" rx="1" ry="1.5" fill="white" opacity="0.25"/>
-        <ellipse cx="51.5" cy="64" rx="1" ry="1.5" fill="white" opacity="0.25"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#5C913B" d="M2.472 6.572C1.528 8.698 1 11.038 1 13.5 1 23.165 9.059 31 19 31c7.746 0 14.33-4.767 16.868-11.44L2.472 6.572z"/>
+        <path fill="#FFE8B6" d="M4.332 7.295C3.479 9.197 3 11.293 3 13.5c0 8.591 7.164 15.556 16 15.556 6.904 0 12.77-4.26 15.013-10.218L4.332 7.295z"/>
+        <path fill="#DD2E44" d="M6.191 8.019C5.43 9.697 5 11.548 5 13.5c0 7.518 6.268 13.611 14 13.611 6.062 0 11.21-3.753 13.156-8.995L6.191 8.019z"/>
+        <path d="M9.916 14.277c-.307.46-.741.708-.971.555-.23-.153-.168-.649.139-1.109.307-.46.741-.708.971-.555.23.153.168.649-.139 1.109z"/>
+        <path d="M11.998 17.955c.05.551-.132 1.016-.406 1.041-.275.025-.538-.4-.588-.951-.05-.551.132-1.016.406-1.04.276-.026.538.398.588.95z"/>
+        <path d="M23.935 23.755c.273.481.299.979.06 1.115-.241.137-.656-.143-.929-.624-.273-.48-.299-.979-.059-1.115.241-.138.655.141.928.624z"/>
       </svg>`;
   },
 
-  /* ---- Watermelon: Cross-section, Many Seeds ---- */
+  /* ---- Semangka Irisan: Banyak Biji (8 biji) ---- */
   watermelonManySeeds() {
     return `
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="114" rx="40" ry="4" fill="rgba(0,0,0,0.06)"/>
-        <circle cx="60" cy="58" r="48" fill="#16a34a"/>
-        <circle cx="60" cy="58" r="44" fill="#bbf7d0"/>
-        <circle cx="60" cy="58" r="38" fill="#ef4444"/>
-        <ellipse cx="48" cy="44" rx="22" ry="16" fill="#f87171" opacity="0.4"/>
-        <circle cx="60" cy="58" r="10" fill="#fca5a5" opacity="0.45"/>
-        <line x1="60" y1="22" x2="60" y2="94" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
-        <line x1="24" y1="58" x2="96" y2="58" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
-        <!-- Many seeds -->
-        <path d="M 36,36 Q 33,31 36,27 Q 39,31 36,36 Z" fill="#1e293b"/>
-        <path d="M 56,30 Q 53,25 56,21 Q 59,25 56,30 Z" fill="#1e293b"/>
-        <path d="M 74,36 Q 71,31 74,27 Q 77,31 74,36 Z" fill="#1e293b"/>
-        <path d="M 40,54 Q 37,49 40,45 Q 43,49 40,54 Z" fill="#1e293b"/>
-        <path d="M 72,52 Q 69,47 72,43 Q 75,47 72,52 Z" fill="#1e293b"/>
-        <path d="M 34,70 Q 31,65 34,61 Q 37,65 34,70 Z" fill="#1e293b" transform="rotate(10,34,70)"/>
-        <path d="M 56,72 Q 53,67 56,63 Q 59,67 56,72 Z" fill="#1e293b" transform="rotate(-8,56,72)"/>
-        <path d="M 76,66 Q 73,61 76,57 Q 79,61 76,66 Z" fill="#1e293b" transform="rotate(5,76,66)"/>
-        <!-- Seed highlights -->
-        <ellipse cx="35.5" cy="30" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="55.5" cy="24" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="73.5" cy="30" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="39.5" cy="48" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="71.5" cy="46" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="33.5" cy="64" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="55.5" cy="66" rx="1" ry="1.5" fill="white" opacity="0.22"/>
-        <ellipse cx="75.5" cy="60" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#5C913B" d="M2.472 6.572C1.528 8.698 1 11.038 1 13.5 1 23.165 9.059 31 19 31c7.746 0 14.33-4.767 16.868-11.44L2.472 6.572z"/>
+        <path fill="#FFE8B6" d="M4.332 7.295C3.479 9.197 3 11.293 3 13.5c0 8.591 7.164 15.556 16 15.556 6.904 0 12.77-4.26 15.013-10.218L4.332 7.295z"/>
+        <path fill="#DD2E44" d="M6.191 8.019C5.43 9.697 5 11.548 5 13.5c0 7.518 6.268 13.611 14 13.611 6.062 0 11.21-3.753 13.156-8.995L6.191 8.019z"/>
+        <path d="M9.916 14.277c-.307.46-.741.708-.971.555-.23-.153-.168-.649.139-1.109.307-.46.741-.708.971-.555.23.153.168.649-.139 1.109zm6 1c-.307.46-.741.708-.971.555-.23-.153-.168-.649.139-1.109.307-.46.741-.708.971-.555.23.153.168.649-.139 1.109zm5.082 4.678c.05.551-.132 1.016-.406 1.041-.275.025-.538-.4-.588-.951-.051-.551.132-1.016.406-1.04.275-.026.538.398.588.95zm-9-2c.05.551-.132 1.016-.406 1.041-.275.025-.538-.4-.588-.951-.05-.551.132-1.016.406-1.04.276-.026.538.398.588.95zm3.901 5.346c-.333.441-.78.663-1 .497-.221-.166-.129-.658.205-1.099.333-.441.781-.663 1-.497.221.166.13.657-.205 1.099zm8.036.454c.273.481.299.979.06 1.115-.241.137-.656-.143-.929-.624-.273-.48-.299-.979-.059-1.115.241-.138.655.141.928.624zm-7.017-5.028c.303.463.362.958.131 1.109-.231.152-.663-.1-.966-.562-.303-.462-.361-.958-.131-1.108.231-.154.663.097.966.561zm8.981 1.574c-.333.441-.78.663-1.001.497-.221-.166-.129-.658.205-1.099.333-.442.78-.663 1-.497.222.166.131.657-.204 1.099z"/>
       </svg>`;
   },
 
-  /* ---- Snapdragon: Red ---- */
+/* ========================================
+ * ANTIRRHINUM — Berbasis ikon Twemoji (hibiscus)
+ * Warna diubah untuk menunjukkan fenotipe:
+ * Merah (MM) / Pink (Mm) / Putih (mm)
+ * ======================================== */
+
+  /* ---- Bunga Merah (MM) ---- */
   snapdragonRed() {
     return `
-      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-        <!-- Stem -->
-        <path d="M 50,78 C 49,88 50,98 50,112" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <!-- Leaves -->
-        <path d="M 49,90 C 38,84 26,86 24,92 C 30,90 38,88 49,90" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <path d="M 51,100 C 62,94 74,96 76,102 C 70,100 62,98 51,100" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <!-- Leaf veins -->
-        <line x1="49" y1="90" x2="30" y2="88" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
-        <line x1="51" y1="100" x2="70" y2="98" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
-        <!-- Calyx -->
-        <path d="M 42,74 L 46,66 L 50,72 L 54,66 L 58,74" fill="#16a34a" stroke="#15803d" stroke-width="0.8"/>
-        <!-- Upper petals (2 fused) -->
-        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 L 74,50 C 80,32 70,16 50,10 Z" fill="#dc2626"/>
-        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 Z" fill="#b91c1c" opacity="0.2"/>
-        <!-- Left petal -->
-        <path d="M 24,40 C 10,46 8,62 18,74 C 24,66 26,56 26,50 Z" fill="#ef4444"/>
-        <!-- Right petal -->
-        <path d="M 76,40 C 90,46 92,62 82,74 C 76,66 74,56 74,50 Z" fill="#ef4444"/>
-        <!-- Lower left petal -->
-        <path d="M 22,62 C 18,70 26,80 42,76 C 34,72 26,66 22,62 Z" fill="#f87171"/>
-        <!-- Lower right petal -->
-        <path d="M 78,62 C 82,70 74,80 58,76 C 66,72 74,66 78,62 Z" fill="#f87171"/>
-        <!-- Petal veins -->
-        <path d="M 50,18 L 50,38" stroke="#991b1b" stroke-width="0.6" opacity="0.2" fill="none"/>
-        <path d="M 16,52 L 26,50" stroke="#991b1b" stroke-width="0.5" opacity="0.2" fill="none"/>
-        <path d="M 84,52 L 74,50" stroke="#991b1b" stroke-width="0.5" opacity="0.2" fill="none"/>
-        <!-- Center throat -->
-        <ellipse cx="50" cy="48" rx="10" ry="12" fill="#fbbf24"/>
-        <ellipse cx="50" cy="48" rx="5" ry="7" fill="#f59e0b"/>
-        <circle cx="50" cy="46" r="2" fill="#d97706" opacity="0.5"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#77B255" d="M19.602 32.329c6.509 6.506 17.254-7.669 15.72-7.669-7.669 0-22.227 1.161-15.72 7.669z"/>
+        <path fill="#77B255" d="M15.644 33.372C9.612 39.404-.07 26.263 1.352 26.263c3.81 0 9.374-.348 12.79.867 2.958 1.052 4.304 3.442 1.502 6.242z"/>
+        <path fill="#FF6B6B" d="M34.613 15.754c-.052-.901-.175-2.585-1.398-4.227-1.16-1.549-3.805-3.371-5.534-2.585.516-1.676-.264-4.125-1.191-5.49-1.179-1.736-4.262-3.843-8.146-3.026-1.754.369-4.18 2.036-4.632 3.864-1.18-1.471-4.22-1.675-6.015-1.222-2.026.511-3.154 1.777-3.739 2.461l.003-.005-.03.034-.027.033c-.583.689-1.656 1.994-1.847 4.074-.193 2.146.75 5.832 3.026 6.042.149.014.324.031.514.051-2.271.098-3.572 3.654-3.595 5.8-.022 2.102.926 3.506 1.443 4.243l-.003-.004c.008.01.019.024.025.036.007.011.02.023.026.036.523.733 1.525 2.094 3.515 2.776 1.958.669 5.553.656 6.567-1.236-.273 2.244 3.027 4.077 5.169 4.438 2.115.358 3.71-.358 4.55-.753l-.005.003c.013-.008.028-.015.041-.021l.041-.02c.838-.4 2.398-1.178 3.462-3.04.729-1.282 1.27-3.403.951-5.015l.192.127c1.826 1.224 4.63-1.119 5.705-2.938 1.044-1.761.932-4.424.932-4.436z"/>
+        <path fill="#DC2626" d="M27.542 13.542c-1.786-.997-4.874-.434-6.792.308-.266-.468-.621-.875-1.051-1.196 1.393-1.607 3.526-4.593 1.468-6.362-2.191-1.883-3.74 2.154-3.575 5.605-.068-.003-.132-.02-.201-.02-1.019 0-1.94.402-2.632 1.045-1.401-2.277-3.942-4.244-5.314-2.392-1.482 2.002 1.148 3.153 4.222 4.2-.09.329-.154.668-.154 1.025 0 .456.093.887.238 1.293-2.541.732-6.236 2.718-4.21 4.91 2.122 2.296 4.472-1.238 5.604-3.053.635.454 1.407.727 2.247.727.225 0 .441-.029.655-.066-.109 4.802 1.443 7.07 4.036 5.892 2.295-1.043-.137-5.299-1.781-7.165.316-.362.564-.779.729-1.241 7.008 2.544 8.589-2.351 6.511-3.51z"/>
+        <path fill="#991B1B" d="M17.707 17.459c-.679 0-.668-.562-.832-1.25-.532-2.233-2.381-6.308-4.601-9.163-.509-.654-.391-1.596.263-2.105.654-.508 1.596-.391 2.105.263 2.439 3.136 3.264 7.404 3.982 10.421.191.806.237 1.601-.569 1.792-.116.028-.233.042-.348.042z"/>
+        <path fill="#FFCC4D" d="M15.904 5.327c.498.684.079 1.838-.936 2.578l-.475.347c-1.016.739-2.243.785-2.741.101l-2.78-3.817c-.498-.684-.079-1.838.936-2.577l.475-.347c1.015-.739 2.242-.785 2.74-.101l2.781 3.816z"/>
       </svg>`;
   },
 
-  /* ---- Snapdragon: Pink ---- */
+  /* ---- Bunga Pink (Mm) ---- */
   snapdragonPink() {
     return `
-      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 50,78 C 49,88 50,98 50,112" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M 49,90 C 38,84 26,86 24,92 C 30,90 38,88 49,90" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <path d="M 51,100 C 62,94 74,96 76,102 C 70,100 62,98 51,100" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <line x1="49" y1="90" x2="30" y2="88" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
-        <line x1="51" y1="100" x2="70" y2="98" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
-        <path d="M 42,74 L 46,66 L 50,72 L 54,66 L 58,74" fill="#16a34a" stroke="#15803d" stroke-width="0.8"/>
-        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 L 74,50 C 80,32 70,16 50,10 Z" fill="#ec4899"/>
-        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 Z" fill="#be185d" opacity="0.2"/>
-        <path d="M 24,40 C 10,46 8,62 18,74 C 24,66 26,56 26,50 Z" fill="#f472b6"/>
-        <path d="M 76,40 C 90,46 92,62 82,74 C 76,66 74,56 74,50 Z" fill="#f472b6"/>
-        <path d="M 22,62 C 18,70 26,80 42,76 C 34,72 26,66 22,62 Z" fill="#f9a8d4"/>
-        <path d="M 78,62 C 82,70 74,80 58,76 C 66,72 74,66 78,62 Z" fill="#f9a8d4"/>
-        <path d="M 50,18 L 50,38" stroke="#9d174d" stroke-width="0.6" opacity="0.2" fill="none"/>
-        <path d="M 16,52 L 26,50" stroke="#9d174d" stroke-width="0.5" opacity="0.2" fill="none"/>
-        <path d="M 84,52 L 74,50" stroke="#9d174d" stroke-width="0.5" opacity="0.2" fill="none"/>
-        <ellipse cx="50" cy="48" rx="10" ry="12" fill="#fbbf24"/>
-        <ellipse cx="50" cy="48" rx="5" ry="7" fill="#f59e0b"/>
-        <circle cx="50" cy="46" r="2" fill="#d97706" opacity="0.5"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#77B255" d="M19.602 32.329c6.509 6.506 17.254-7.669 15.72-7.669-7.669 0-22.227 1.161-15.72 7.669z"/>
+        <path fill="#77B255" d="M15.644 33.372C9.612 39.404-.07 26.263 1.352 26.263c3.81 0 9.374-.348 12.79.867 2.958 1.052 4.304 3.442 1.502 6.242z"/>
+        <path fill="#F9A8D4" d="M34.613 15.754c-.052-.901-.175-2.585-1.398-4.227-1.16-1.549-3.805-3.371-5.534-2.585.516-1.676-.264-4.125-1.191-5.49-1.179-1.736-4.262-3.843-8.146-3.026-1.754.369-4.18 2.036-4.632 3.864-1.18-1.471-4.22-1.675-6.015-1.222-2.026.511-3.154 1.777-3.739 2.461l.003-.005-.03.034-.027.033c-.583.689-1.656 1.994-1.847 4.074-.193 2.146.75 5.832 3.026 6.042.149.014.324.031.514.051-2.271.098-3.572 3.654-3.595 5.8-.022 2.102.926 3.506 1.443 4.243l-.003-.004c.008.01.019.024.025.036.007.011.02.023.026.036.523.733 1.525 2.094 3.515 2.776 1.958.669 5.553.656 6.567-1.236-.273 2.244 3.027 4.077 5.169 4.438 2.115.358 3.71-.358 4.55-.753l-.005.003c.013-.008.028-.015.041-.021l.041-.02c.838-.4 2.398-1.178 3.462-3.04.729-1.282 1.27-3.403.951-5.015l.192.127c1.826 1.224 4.63-1.119 5.705-2.938 1.044-1.761.932-4.424.932-4.436z"/>
+        <path fill="#EC4899" d="M27.542 13.542c-1.786-.997-4.874-.434-6.792.308-.266-.468-.621-.875-1.051-1.196 1.393-1.607 3.526-4.593 1.468-6.362-2.191-1.883-3.74 2.154-3.575 5.605-.068-.003-.132-.02-.201-.02-1.019 0-1.94.402-2.632 1.045-1.401-2.277-3.942-4.244-5.314-2.392-1.482 2.002 1.148 3.153 4.222 4.2-.09.329-.154.668-.154 1.025 0 .456.093.887.238 1.293-2.541.732-6.236 2.718-4.21 4.91 2.122 2.296 4.472-1.238 5.604-3.053.635.454 1.407.727 2.247.727.225 0 .441-.029.655-.066-.109 4.802 1.443 7.07 4.036 5.892 2.295-1.043-.137-5.299-1.781-7.165.316-.362.564-.779.729-1.241 7.008 2.544 8.589-2.351 6.511-3.51z"/>
+        <path fill="#BE185D" d="M17.707 17.459c-.679 0-.668-.562-.832-1.25-.532-2.233-2.381-6.308-4.601-9.163-.509-.654-.391-1.596.263-2.105.654-.508 1.596-.391 2.105.263 2.439 3.136 3.264 7.404 3.982 10.421.191.806.237 1.601-.569 1.792-.116.028-.233.042-.348.042z"/>
+        <path fill="#FFCC4D" d="M15.904 5.327c.498.684.079 1.838-.936 2.578l-.475.347c-1.016.739-2.243.785-2.741.101l-2.78-3.817c-.498-.684-.079-1.838.936-2.577l.475-.347c1.015-.739 2.242-.785 2.74-.101l2.781 3.816z"/>
       </svg>`;
   },
 
-  /* ---- Snapdragon: White ---- */
+  /* ---- Bunga Putih (mm) ---- */
   snapdragonWhite() {
     return `
-      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 50,78 C 49,88 50,98 50,112" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path d="M 49,90 C 38,84 26,86 24,92 C 30,90 38,88 49,90" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <path d="M 51,100 C 62,94 74,96 76,102 C 70,100 62,98 51,100" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
-        <line x1="49" y1="90" x2="30" y2="88" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
-        <line x1="51" y1="100" x2="70" y2="98" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
-        <path d="M 42,74 L 46,66 L 50,72 L 54,66 L 58,74" fill="#16a34a" stroke="#15803d" stroke-width="0.8"/>
-        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 L 74,50 C 80,32 70,16 50,10 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
-        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 Z" fill="#f3f4f6" opacity="0.5"/>
-        <path d="M 24,40 C 10,46 8,62 18,74 C 24,66 26,56 26,50 Z" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
-        <path d="M 76,40 C 90,46 92,62 82,74 C 76,66 74,56 74,50 Z" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
-        <path d="M 22,62 C 18,70 26,80 42,76 C 34,72 26,66 22,62 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
-        <path d="M 78,62 C 82,70 74,80 58,76 C 66,72 74,66 78,62 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
-        <path d="M 50,18 L 50,38" stroke="#9ca3af" stroke-width="0.6" opacity="0.25" fill="none"/>
-        <path d="M 16,52 L 26,50" stroke="#9ca3af" stroke-width="0.5" opacity="0.25" fill="none"/>
-        <path d="M 84,52 L 74,50" stroke="#9ca3af" stroke-width="0.5" opacity="0.25" fill="none"/>
-        <ellipse cx="50" cy="48" rx="10" ry="12" fill="#fbbf24"/>
-        <ellipse cx="50" cy="48" rx="5" ry="7" fill="#f59e0b"/>
-        <circle cx="50" cy="46" r="2" fill="#d97706" opacity="0.5"/>
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#77B255" d="M19.602 32.329c6.509 6.506 17.254-7.669 15.72-7.669-7.669 0-22.227 1.161-15.72 7.669z"/>
+        <path fill="#77B255" d="M15.644 33.372C9.612 39.404-.07 26.263 1.352 26.263c3.81 0 9.374-.348 12.79.867 2.958 1.052 4.304 3.442 1.502 6.242z"/>
+        <path fill="#F9FAFB" d="M34.613 15.754c-.052-.901-.175-2.585-1.398-4.227-1.16-1.549-3.805-3.371-5.534-2.585.516-1.676-.264-4.125-1.191-5.49-1.179-1.736-4.262-3.843-8.146-3.026-1.754.369-4.18 2.036-4.632 3.864-1.18-1.471-4.22-1.675-6.015-1.222-2.026.511-3.154 1.777-3.739 2.461l.003-.005-.03.034-.027.033c-.583.689-1.656 1.994-1.847 4.074-.193 2.146.75 5.832 3.026 6.042.149.014.324.031.514.051-2.271.098-3.572 3.654-3.595 5.8-.022 2.102.926 3.506 1.443 4.243l-.003-.004c.008.01.019.024.025.036.007.011.02.023.026.036.523.733 1.525 2.094 3.515 2.776 1.958.669 5.553.656 6.567-1.236-.273 2.244 3.027 4.077 5.169 4.438 2.115.358 3.71-.358 4.55-.753l-.005.003c.013-.008.028-.015.041-.021l.041-.02c.838-.4 2.398-1.178 3.462-3.04.729-1.282 1.27-3.403.951-5.015l.192.127c1.826 1.224 4.63-1.119 5.705-2.938 1.044-1.761.932-4.424.932-4.436z"/>
+        <path fill="#D1D5DB" d="M27.542 13.542c-1.786-.997-4.874-.434-6.792.308-.266-.468-.621-.875-1.051-1.196 1.393-1.607 3.526-4.593 1.468-6.362-2.191-1.883-3.74 2.154-3.575 5.605-.068-.003-.132-.02-.201-.02-1.019 0-1.94.402-2.632 1.045-1.401-2.277-3.942-4.244-5.314-2.392-1.482 2.002 1.148 3.153 4.222 4.2-.09.329-.154.668-.154 1.025 0 .456.093.887.238 1.293-2.541.732-6.236 2.718-4.21 4.91 2.122 2.296 4.472-1.238 5.604-3.053.635.454 1.407.727 2.247.727.225 0 .441-.029.655-.066-.109 4.802 1.443 7.07 4.036 5.892 2.295-1.043-.137-5.299-1.781-7.165.316-.362.564-.779.729-1.241 7.008 2.544 8.589-2.351 6.511-3.51z"/>
+        <path fill="#9CA3AF" d="M17.707 17.459c-.679 0-.668-.562-.832-1.25-.532-2.233-2.381-6.308-4.601-9.163-.509-.654-.391-1.596.263-2.105.654-.508 1.596-.391 2.105.263 2.439 3.136 3.264 7.404 3.982 10.421.191.806.237 1.601-.569 1.792-.116.028-.233.042-.348.042z"/>
+        <path fill="#FFCC4D" d="M15.904 5.327c.498.684.079 1.838-.936 2.578l-.475.347c-1.016.739-2.243.785-2.741.101l-2.78-3.817c-.498-.684-.079-1.838.936-2.577l.475-.347c1.015-.739 2.242-.785 2.74-.101l2.781 3.816z"/>
       </svg>`;
   },
-};
 
 function getSvg(svgKey) {
   return SVG[svgKey] ? SVG[svgKey]() : "";
