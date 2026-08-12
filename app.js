@@ -78,111 +78,196 @@ const SVG = {
   /* ---- Watermelon: Round (Bulat) ---- */
   watermelonRound() {
     return `
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="90" rx="28" ry="4" fill="rgba(0,0,0,0.07)"/>
-        <circle cx="50" cy="50" r="40" fill="#4ade80"/>
-        <circle cx="50" cy="50" r="40" fill="none" stroke="#16a34a" stroke-width="2"/>
-        <path d="M 18,28 Q 50,50 18,72" stroke="#16a34a" stroke-width="3" fill="none" opacity="0.35"/>
-        <path d="M 33,14 Q 50,50 33,86" stroke="#16a34a" stroke-width="3" fill="none" opacity="0.35"/>
-        <path d="M 50,10 L 50,90"       stroke="#16a34a" stroke-width="3" fill="none" opacity="0.35"/>
-        <path d="M 67,14 Q 50,50 67,86" stroke="#16a34a" stroke-width="3" fill="none" opacity="0.35"/>
-        <path d="M 82,28 Q 50,50 82,72" stroke="#16a34a" stroke-width="3" fill="none" opacity="0.35"/>
-        <rect x="47" y="7" width="6" height="8" rx="2" fill="#92400e"/>
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- Shadow -->
+        <ellipse cx="60" cy="112" rx="32" ry="5" fill="rgba(0,0,0,0.08)"/>
+        <!-- Body base (dark outline) -->
+        <circle cx="60" cy="58" r="46" fill="#15803d"/>
+        <!-- Body main -->
+        <circle cx="60" cy="58" r="44" fill="#22c55e"/>
+        <!-- Body highlight zone -->
+        <ellipse cx="46" cy="42" rx="28" ry="22" fill="#4ade80" opacity="0.5"/>
+        <!-- Stripes — organic curves -->
+        <path d="M 20,28 C 28,42 36,54 22,78" stroke="#15803d" stroke-width="5" fill="none" opacity="0.35" stroke-linecap="round"/>
+        <path d="M 34,14 C 40,34 46,54 36,92" stroke="#15803d" stroke-width="4.5" fill="none" opacity="0.30" stroke-linecap="round"/>
+        <path d="M 60,12 C 60,34 60,56 60,104" stroke="#15803d" stroke-width="4" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M 86,14 C 80,34 74,54 84,92" stroke="#15803d" stroke-width="4.5" fill="none" opacity="0.30" stroke-linecap="round"/>
+        <path d="M 100,28 C 92,42 84,54 98,78" stroke="#15803d" stroke-width="5" fill="none" opacity="0.35" stroke-linecap="round"/>
+        <!-- Shine -->
+        <ellipse cx="40" cy="34" rx="12" ry="8" fill="white" opacity="0.18" transform="rotate(-22,40,34)"/>
+        <!-- Stem -->
+        <path d="M 58,14 C 56,9 53,5 48,3" stroke="#78350f" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <!-- Tendril -->
+        <path d="M 62,14 C 66,9 70,7 72,10 C 74,14 70,16 67,13" stroke="#22c55e" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <!-- Leaf hint -->
+        <path d="M 48,3 C 44,5 42,3 40,5" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round"/>
       </svg>`;
   },
 
   /* ---- Watermelon: Oval (Lonjong) ---- */
   watermelonOval() {
     return `
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="90" rx="20" ry="4" fill="rgba(0,0,0,0.07)"/>
-        <ellipse cx="50" cy="50" rx="26" ry="42" fill="#4ade80"/>
-        <ellipse cx="50" cy="50" rx="26" ry="42" fill="none" stroke="#16a34a" stroke-width="2"/>
-        <path d="M 30,18 Q 50,50 30,82" stroke="#16a34a" stroke-width="2.5" fill="none" opacity="0.35"/>
-        <path d="M 42,9  Q 50,50 42,91" stroke="#16a34a" stroke-width="2.5" fill="none" opacity="0.35"/>
-        <path d="M 50,8  L 50,92"       stroke="#16a34a" stroke-width="2.5" fill="none" opacity="0.35"/>
-        <path d="M 58,9  Q 50,50 58,91" stroke="#16a34a" stroke-width="2.5" fill="none" opacity="0.35"/>
-        <path d="M 70,18 Q 50,50 70,82" stroke="#16a34a" stroke-width="2.5" fill="none" opacity="0.35"/>
-        <rect x="47" y="5" width="6" height="8" rx="2" fill="#92400e"/>
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="110" rx="22" ry="4" fill="rgba(0,0,0,0.07)"/>
+        <ellipse cx="60" cy="58" rx="28" ry="46" fill="#15803d"/>
+        <ellipse cx="60" cy="58" rx="26" ry="44" fill="#22c55e"/>
+        <ellipse cx="50" cy="40" rx="18" ry="26" fill="#4ade80" opacity="0.45"/>
+        <path d="M 38,18 C 44,36 46,56 40,90" stroke="#15803d" stroke-width="4" fill="none" opacity="0.30" stroke-linecap="round"/>
+        <path d="M 50,8  C 54,28 56,54 52,100" stroke="#15803d" stroke-width="3.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M 60,6  C 60,28 60,54 60,102" stroke="#15803d" stroke-width="3" fill="none" opacity="0.22" stroke-linecap="round"/>
+        <path d="M 70,8  C 66,28 64,54 68,100" stroke="#15803d" stroke-width="3.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+        <path d="M 82,18 C 76,36 74,56 80,90" stroke="#15803d" stroke-width="4" fill="none" opacity="0.30" stroke-linecap="round"/>
+        <ellipse cx="46" cy="30" rx="6" ry="10" fill="white" opacity="0.16" transform="rotate(-8,46,30)"/>
+        <path d="M 58,14 C 56,8 53,4 48,2" stroke="#78350f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M 62,14 C 66,9 69,7 71,10" stroke="#22c55e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
       </svg>`;
   },
 
   /* ---- Watermelon: Cross-section, Few Seeds ---- */
   watermelonFewSeeds() {
     return `
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="45" fill="#4ade80" stroke="#16a34a" stroke-width="2"/>
-        <circle cx="50" cy="50" r="38" fill="#ef4444"/>
-        <circle cx="50" cy="50" r="22" fill="#fca5a5" opacity="0.25"/>
-        <ellipse cx="40" cy="40" rx="2.5" ry="4" fill="#1e293b" transform="rotate(-15,40,40)"/>
-        <ellipse cx="58" cy="36" rx="2.5" ry="4" fill="#1e293b" transform="rotate(12,58,36)"/>
-        <ellipse cx="50" cy="58" rx="2.5" ry="4" fill="#1e293b" transform="rotate(-5,50,58)"/>
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="114" rx="40" ry="4" fill="rgba(0,0,0,0.06)"/>
+        <!-- Outer rind -->
+        <circle cx="60" cy="58" r="48" fill="#16a34a"/>
+        <!-- Inner rind (white-green) -->
+        <circle cx="60" cy="58" r="44" fill="#bbf7d0"/>
+        <!-- Flesh -->
+        <circle cx="60" cy="58" r="38" fill="#ef4444"/>
+        <!-- Flesh highlight -->
+        <ellipse cx="48" cy="44" rx="22" ry="16" fill="#f87171" opacity="0.4"/>
+        <!-- Center -->
+        <circle cx="60" cy="58" r="10" fill="#fca5a5" opacity="0.45"/>
+        <!-- Flesh texture lines -->
+        <line x1="60" y1="22" x2="60" y2="94" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
+        <line x1="24" y1="58" x2="96" y2="58" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
+        <!-- Seeds — teardrop shapes -->
+        <path d="M 42,42 Q 39,37 42,33 Q 45,37 42,42 Z" fill="#1e293b"/>
+        <path d="M 70,38 Q 67,33 70,29 Q 73,33 70,38 Z" fill="#1e293b"/>
+        <path d="M 52,70 Q 49,65 52,61 Q 55,65 52,70 Z" fill="#1e293b" transform="rotate(12,52,70)"/>
+        <!-- Seed highlights -->
+        <ellipse cx="41.5" cy="36" rx="1" ry="1.5" fill="white" opacity="0.25"/>
+        <ellipse cx="69.5" cy="32" rx="1" ry="1.5" fill="white" opacity="0.25"/>
+        <ellipse cx="51.5" cy="64" rx="1" ry="1.5" fill="white" opacity="0.25"/>
       </svg>`;
   },
 
   /* ---- Watermelon: Cross-section, Many Seeds ---- */
   watermelonManySeeds() {
     return `
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="45" fill="#4ade80" stroke="#16a34a" stroke-width="2"/>
-        <circle cx="50" cy="50" r="38" fill="#ef4444"/>
-        <circle cx="50" cy="50" r="22" fill="#fca5a5" opacity="0.25"/>
-        <ellipse cx="35" cy="34" rx="2.5" ry="4" fill="#1e293b" transform="rotate(-20,35,34)"/>
-        <ellipse cx="55" cy="30" rx="2.5" ry="4" fill="#1e293b" transform="rotate(15,55,30)"/>
-        <ellipse cx="66" cy="42" rx="2.5" ry="4" fill="#1e293b" transform="rotate(5,66,42)"/>
-        <ellipse cx="38" cy="50" rx="2.5" ry="4" fill="#1e293b" transform="rotate(-10,38,50)"/>
-        <ellipse cx="60" cy="54" rx="2.5" ry="4" fill="#1e293b" transform="rotate(8,60,54)"/>
-        <ellipse cx="34" cy="64" rx="2.5" ry="4" fill="#1e293b" transform="rotate(-12,34,64)"/>
-        <ellipse cx="50" cy="66" rx="2.5" ry="4" fill="#1e293b" transform="rotate(3,50,66)"/>
-        <ellipse cx="63" cy="68" rx="2.5" ry="4" fill="#1e293b" transform="rotate(-7,63,68)"/>
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="114" rx="40" ry="4" fill="rgba(0,0,0,0.06)"/>
+        <circle cx="60" cy="58" r="48" fill="#16a34a"/>
+        <circle cx="60" cy="58" r="44" fill="#bbf7d0"/>
+        <circle cx="60" cy="58" r="38" fill="#ef4444"/>
+        <ellipse cx="48" cy="44" rx="22" ry="16" fill="#f87171" opacity="0.4"/>
+        <circle cx="60" cy="58" r="10" fill="#fca5a5" opacity="0.45"/>
+        <line x1="60" y1="22" x2="60" y2="94" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
+        <line x1="24" y1="58" x2="96" y2="58" stroke="#dc2626" stroke-width="0.5" opacity="0.15"/>
+        <!-- Many seeds -->
+        <path d="M 36,36 Q 33,31 36,27 Q 39,31 36,36 Z" fill="#1e293b"/>
+        <path d="M 56,30 Q 53,25 56,21 Q 59,25 56,30 Z" fill="#1e293b"/>
+        <path d="M 74,36 Q 71,31 74,27 Q 77,31 74,36 Z" fill="#1e293b"/>
+        <path d="M 40,54 Q 37,49 40,45 Q 43,49 40,54 Z" fill="#1e293b"/>
+        <path d="M 72,52 Q 69,47 72,43 Q 75,47 72,52 Z" fill="#1e293b"/>
+        <path d="M 34,70 Q 31,65 34,61 Q 37,65 34,70 Z" fill="#1e293b" transform="rotate(10,34,70)"/>
+        <path d="M 56,72 Q 53,67 56,63 Q 59,67 56,72 Z" fill="#1e293b" transform="rotate(-8,56,72)"/>
+        <path d="M 76,66 Q 73,61 76,57 Q 79,61 76,66 Z" fill="#1e293b" transform="rotate(5,76,66)"/>
+        <!-- Seed highlights -->
+        <ellipse cx="35.5" cy="30" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="55.5" cy="24" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="73.5" cy="30" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="39.5" cy="48" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="71.5" cy="46" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="33.5" cy="64" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="55.5" cy="66" rx="1" ry="1.5" fill="white" opacity="0.22"/>
+        <ellipse cx="75.5" cy="60" rx="1" ry="1.5" fill="white" opacity="0.22"/>
       </svg>`;
   },
 
   /* ---- Snapdragon: Red ---- */
   snapdragonRed() {
     return `
-      <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="22" rx="13" ry="17" fill="#dc2626"/>
-        <ellipse cx="27" cy="36" rx="13" ry="17" fill="#ef4444" transform="rotate(-35,27,36)"/>
-        <ellipse cx="73" cy="36" rx="13" ry="17" fill="#ef4444" transform="rotate(35,73,36)"/>
-        <ellipse cx="30" cy="60" rx="11" ry="15" fill="#dc2626" transform="rotate(-60,30,60)"/>
-        <ellipse cx="70" cy="60" rx="11" ry="15" fill="#dc2626" transform="rotate(60,70,60)"/>
-        <circle cx="50" cy="42" r="8" fill="#fbbf24"/>
-        <circle cx="50" cy="42" r="4" fill="#f59e0b"/>
-        <line x1="50" y1="70" x2="50" y2="100" stroke="#16a34a" stroke-width="3"/>
-        <ellipse cx="40" cy="85" rx="8" ry="4" fill="#4ade80" transform="rotate(-25,40,85)"/>
+      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- Stem -->
+        <path d="M 50,78 C 49,88 50,98 50,112" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Leaves -->
+        <path d="M 49,90 C 38,84 26,86 24,92 C 30,90 38,88 49,90" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <path d="M 51,100 C 62,94 74,96 76,102 C 70,100 62,98 51,100" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <!-- Leaf veins -->
+        <line x1="49" y1="90" x2="30" y2="88" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
+        <line x1="51" y1="100" x2="70" y2="98" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
+        <!-- Calyx -->
+        <path d="M 42,74 L 46,66 L 50,72 L 54,66 L 58,74" fill="#16a34a" stroke="#15803d" stroke-width="0.8"/>
+        <!-- Upper petals (2 fused) -->
+        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 L 74,50 C 80,32 70,16 50,10 Z" fill="#dc2626"/>
+        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 Z" fill="#b91c1c" opacity="0.2"/>
+        <!-- Left petal -->
+        <path d="M 24,40 C 10,46 8,62 18,74 C 24,66 26,56 26,50 Z" fill="#ef4444"/>
+        <!-- Right petal -->
+        <path d="M 76,40 C 90,46 92,62 82,74 C 76,66 74,56 74,50 Z" fill="#ef4444"/>
+        <!-- Lower left petal -->
+        <path d="M 22,62 C 18,70 26,80 42,76 C 34,72 26,66 22,62 Z" fill="#f87171"/>
+        <!-- Lower right petal -->
+        <path d="M 78,62 C 82,70 74,80 58,76 C 66,72 74,66 78,62 Z" fill="#f87171"/>
+        <!-- Petal veins -->
+        <path d="M 50,18 L 50,38" stroke="#991b1b" stroke-width="0.6" opacity="0.2" fill="none"/>
+        <path d="M 16,52 L 26,50" stroke="#991b1b" stroke-width="0.5" opacity="0.2" fill="none"/>
+        <path d="M 84,52 L 74,50" stroke="#991b1b" stroke-width="0.5" opacity="0.2" fill="none"/>
+        <!-- Center throat -->
+        <ellipse cx="50" cy="48" rx="10" ry="12" fill="#fbbf24"/>
+        <ellipse cx="50" cy="48" rx="5" ry="7" fill="#f59e0b"/>
+        <circle cx="50" cy="46" r="2" fill="#d97706" opacity="0.5"/>
       </svg>`;
   },
 
   /* ---- Snapdragon: Pink ---- */
   snapdragonPink() {
     return `
-      <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="22" rx="13" ry="17" fill="#ec4899"/>
-        <ellipse cx="27" cy="36" rx="13" ry="17" fill="#f472b6" transform="rotate(-35,27,36)"/>
-        <ellipse cx="73" cy="36" rx="13" ry="17" fill="#f472b6" transform="rotate(35,73,36)"/>
-        <ellipse cx="30" cy="60" rx="11" ry="15" fill="#ec4899" transform="rotate(-60,30,60)"/>
-        <ellipse cx="70" cy="60" rx="11" ry="15" fill="#ec4899" transform="rotate(60,70,60)"/>
-        <circle cx="50" cy="42" r="8" fill="#fbbf24"/>
-        <circle cx="50" cy="42" r="4" fill="#f59e0b"/>
-        <line x1="50" y1="70" x2="50" y2="100" stroke="#16a34a" stroke-width="3"/>
-        <ellipse cx="40" cy="85" rx="8" ry="4" fill="#4ade80" transform="rotate(-25,40,85)"/>
+      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 50,78 C 49,88 50,98 50,112" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M 49,90 C 38,84 26,86 24,92 C 30,90 38,88 49,90" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <path d="M 51,100 C 62,94 74,96 76,102 C 70,100 62,98 51,100" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <line x1="49" y1="90" x2="30" y2="88" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
+        <line x1="51" y1="100" x2="70" y2="98" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
+        <path d="M 42,74 L 46,66 L 50,72 L 54,66 L 58,74" fill="#16a34a" stroke="#15803d" stroke-width="0.8"/>
+        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 L 74,50 C 80,32 70,16 50,10 Z" fill="#ec4899"/>
+        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 Z" fill="#be185d" opacity="0.2"/>
+        <path d="M 24,40 C 10,46 8,62 18,74 C 24,66 26,56 26,50 Z" fill="#f472b6"/>
+        <path d="M 76,40 C 90,46 92,62 82,74 C 76,66 74,56 74,50 Z" fill="#f472b6"/>
+        <path d="M 22,62 C 18,70 26,80 42,76 C 34,72 26,66 22,62 Z" fill="#f9a8d4"/>
+        <path d="M 78,62 C 82,70 74,80 58,76 C 66,72 74,66 78,62 Z" fill="#f9a8d4"/>
+        <path d="M 50,18 L 50,38" stroke="#9d174d" stroke-width="0.6" opacity="0.2" fill="none"/>
+        <path d="M 16,52 L 26,50" stroke="#9d174d" stroke-width="0.5" opacity="0.2" fill="none"/>
+        <path d="M 84,52 L 74,50" stroke="#9d174d" stroke-width="0.5" opacity="0.2" fill="none"/>
+        <ellipse cx="50" cy="48" rx="10" ry="12" fill="#fbbf24"/>
+        <ellipse cx="50" cy="48" rx="5" ry="7" fill="#f59e0b"/>
+        <circle cx="50" cy="46" r="2" fill="#d97706" opacity="0.5"/>
       </svg>`;
   },
 
   /* ---- Snapdragon: White ---- */
   snapdragonWhite() {
     return `
-      <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="50" cy="22" rx="13" ry="17" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
-        <ellipse cx="27" cy="36" rx="13" ry="17" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" transform="rotate(-35,27,36)"/>
-        <ellipse cx="73" cy="36" rx="13" ry="17" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5" transform="rotate(35,73,36)"/>
-        <ellipse cx="30" cy="60" rx="11" ry="15" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" transform="rotate(-60,30,60)"/>
-        <ellipse cx="70" cy="60" rx="11" ry="15" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" transform="rotate(60,70,60)"/>
-        <circle cx="50" cy="42" r="8" fill="#fbbf24"/>
-        <circle cx="50" cy="42" r="4" fill="#f59e0b"/>
-        <line x1="50" y1="70" x2="50" y2="100" stroke="#16a34a" stroke-width="3"/>
-        <ellipse cx="40" cy="85" rx="8" ry="4" fill="#4ade80" transform="rotate(-25,40,85)"/>
+      <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 50,78 C 49,88 50,98 50,112" stroke="#16a34a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M 49,90 C 38,84 26,86 24,92 C 30,90 38,88 49,90" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <path d="M 51,100 C 62,94 74,96 76,102 C 70,100 62,98 51,100" fill="#4ade80" stroke="#16a34a" stroke-width="0.8"/>
+        <line x1="49" y1="90" x2="30" y2="88" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
+        <line x1="51" y1="100" x2="70" y2="98" stroke="#16a34a" stroke-width="0.5" opacity="0.5"/>
+        <path d="M 42,74 L 46,66 L 50,72 L 54,66 L 58,74" fill="#16a34a" stroke="#15803d" stroke-width="0.8"/>
+        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 L 74,50 C 80,32 70,16 50,10 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5"/>
+        <path d="M 50,10 C 30,16 20,32 26,50 L 50,40 Z" fill="#f3f4f6" opacity="0.5"/>
+        <path d="M 24,40 C 10,46 8,62 18,74 C 24,66 26,56 26,50 Z" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
+        <path d="M 76,40 C 90,46 92,62 82,74 C 76,66 74,56 74,50 Z" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2"/>
+        <path d="M 22,62 C 18,70 26,80 42,76 C 34,72 26,66 22,62 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+        <path d="M 78,62 C 82,70 74,80 58,76 C 66,72 74,66 78,62 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+        <path d="M 50,18 L 50,38" stroke="#9ca3af" stroke-width="0.6" opacity="0.25" fill="none"/>
+        <path d="M 16,52 L 26,50" stroke="#9ca3af" stroke-width="0.5" opacity="0.25" fill="none"/>
+        <path d="M 84,52 L 74,50" stroke="#9ca3af" stroke-width="0.5" opacity="0.25" fill="none"/>
+        <ellipse cx="50" cy="48" rx="10" ry="12" fill="#fbbf24"/>
+        <ellipse cx="50" cy="48" rx="5" ry="7" fill="#f59e0b"/>
+        <circle cx="50" cy="46" r="2" fill="#d97706" opacity="0.5"/>
       </svg>`;
   },
 };
