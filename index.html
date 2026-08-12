@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MahedaLabs - Hukum Mendel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="header-content">
+      <h1>🧬 Simulasi Pewarisan Sifat</h1>
+      <p>Hukum Mendel — Monohybrid Cross</p>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="container">
+
+    <!-- Step 1: Pilih Organisme -->
+    <section id="step-organism" class="step active">
+      <h2 class="section-title">Langkah 1 — Pilih Organisme</h2>
+      <p class="section-desc">Pilih organisme yang ingin kamu pelajari pewarisan sifatnya.</p>
+      <div class="organism-grid" id="organism-grid"></div>
+    </section>
+
+    <!-- Step 2: Pilih Sifat & Atur Parental -->
+    <section id="step-cross" class="step">
+      <div class="step-header">
+        <button class="btn-back" id="btn-back">← Kembali</button>
+        <h2 class="section-title" id="cross-title">Atur Persilangan</h2>
+      </div>
+
+      <div class="trait-tabs" id="trait-tabs"></div>
+
+      <div class="parents-wrapper">
+        <!-- Parent 1 -->
+        <div class="parent-card">
+          <h3 class="parent-label">Parent 1 (P₁)</h3>
+          <div class="genotype-nav">
+            <button class="nav-btn" data-parent="1" data-dir="-1" aria-label="Genotipe sebelumnya">◀</button>
+            <div class="genotype-display" id="display-1"></div>
+            <button class="nav-btn" data-parent="1" data-dir="1" aria-label="Genotipe berikutnya">▶</button>
+          </div>
+        </div>
+
+        <div class="cross-symbol" aria-hidden="true">×</div>
+
+        <!-- Parent 2 -->
+        <div class="parent-card">
+          <h3 class="parent-label">Parent 2 (P₂)</h3>
+          <div class="genotype-nav">
+            <button class="nav-btn" data-parent="2" data-dir="-1" aria-label="Genotipe sebelumnya">◀</button>
+            <div class="genotype-display" id="display-2"></div>
+            <button class="nav-btn" data-parent="2" data-dir="1" aria-label="Genotipe berikutnya">▶</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cross-summary" id="cross-summary"></div>
+      <button class="btn-cross" id="btn-cross">🔬 Mulai Persilangan!</button>
+    </section>
+  </main>
+
+  <!-- ========== MODAL HASIL ========== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="btn-close" aria-label="Tutup">✕</button>
+      <h2 class="modal-title">Hasil Persilangan</h2>
+
+      <div class="result-section" id="result-parental"></div>
+
+      <div class="result-section">
+        <h3>📊 Papan Punnett</h3>
+        <div class="punnett-wrapper" id="result-punnett"></div>
+      </div>
+
+      <div class="ratio-grid">
+        <div class="result-section">
+          <h3>🧬 Rasio Genotipe</h3>
+          <div id="result-genotype-ratio"></div>
+        </div>
+        <div class="result-section">
+          <h3>🌱 Rasio Fenotipe</h3>
+          <div id="result-phenotype-ratio"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
